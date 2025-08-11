@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+ <div class="mainbackground-login">
+  <div class="contactMain text-center" style="padding-bottom: 50px;">
+
+    <div class="h2"><h2>Login & Courses at SCOPE INDIA</h2></div>
+  <h4>Center for Software, Networking, & Cloud Education</h4>
+  <p>One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p>
+ </div>
+
+    <div class="" style="place-items: center;">
+    <div class="contact ">
+    
+    <h3  class=" mb-5" style="padding-top: 30px;">Login page</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- <label for="user">User Email:</label>
+        <input type="email" name="email" value="{{ request.COOKIES.logged_in_username }}" required><br><br>
+
+        <label for="password">password:</label>
+        <input type="password" name="password" required><br><br> -->
+        <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="to" name="email" value="{{ request.COOKIES.logged_in_username }}" placeholder="" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="name" name="password" required>
+    </div>
+  </div>
+        <label>
+            <input type="checkbox" name="remember_me" {% if request.COOKIES.logged_in_user %}checked{% endif %}>Remember me
+        </label><br>
+
+        <button class="mb-3" type="submit">login</button>
+    </form>
+
+    </div>
+    </div>
+ </div>
+    
+<!-- Modal -->
+ <div id="hide">
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header text-white" style= "background:linear-gradient(45deg, var(--hover-color-3));">
+        <h5 class="modal-title" id="messageModalLabel">Notice</h5>
+        <button type="button" id="close" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% for message in messages %}
+          <p class="mb-0 text-primary">{{ message }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% if messages %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var msgModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        msgModal.show();
+    });
+</script>
+{% endif %}
+
+</body>
+</html>
+
+{% endblock %}

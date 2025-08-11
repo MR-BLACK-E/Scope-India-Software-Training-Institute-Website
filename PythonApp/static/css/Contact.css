@@ -1,0 +1,108 @@
+
+.contactCards{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 30px;
+    padding: 10px;
+    color: var(--main-color);
+}
+
+
+  .cards{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url("../static/img/scopeimage-1.jpg");
+    background:linear-gradient(45deg,rgb(39, 33, 64),black);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    /* padding: 1.8rem; */
+    /* border: 2px solid var(--hover-color); */
+    transition: 0.5s ease-out;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    transition: 0.5s;
+  }
+
+  .cards:hover{
+    transform: scale(1.1);
+    z-index: 2;
+  }
+
+  .card-details{
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+  }
+
+  .card_button{
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: var(--text--white);
+    font-size: 1rem;
+    padding: .5rem, 1rem;
+    position:absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.text_title{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.cards:hover{
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+
+.cards:hover .card_button{
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+.h2{
+  background: linear-gradient(50deg, var(--text-color));
+  padding: 10px;
+}
+
+.contactMain h4{
+  padding: 20px;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.contactModal{
+    background:linear-gradient(45deg, var(--hover-color-3));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+.contactModal li a{
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* .animation{
+  transition: 0.5s ease-out;
+  transition: 0.5s;
+}
+
+.animation:hover{
+    transform: scale(1.1);
+    z-index: 2;
+  } */

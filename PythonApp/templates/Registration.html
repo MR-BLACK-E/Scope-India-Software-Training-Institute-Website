@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="mainbackground-registration" >
+
+<!-- 
+<div class="mb-5 mt-5" style="place-items: center;">
+<div class="raw registration">
+    <h3>Registration Form</h3>
+<form method="post" enctype="multipart/form-data">
+  <div class="raw">
+    {% csrf_token %}
+    {{ form.as_p }}
+     <label for="name" class="col-sm-2 col-form-label">password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="name" name="password" required>
+  </div>  
+    <button type="submit">Register</button>
+</form>
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+</div>
+</div> -->
+ <div class="contactMain text-center" style="padding-bottom: 50px;">
+
+    <div class="h2"><h2>Registration in SCOPE INDIA</h2></div>
+  <h4>Center for Software, Networking, & Cloud Education</h4>
+  <p>One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p>
+ </div>
+  <!-- --contact cards start-- -->
+<!-- --Registration form start-- -->
+ <div style="place-items: center;">
+<div class=" contact mb-5 mt-5">
+    <h3 class=" mb-5" style="padding-top: 30px;">Registration Form</h3>
+<form id="form" name="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">First Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="first_name" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">Last Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="last_name" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="to" name="email" placeholder="" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="name" name="password" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <!-- np<label for="male">male</label>
+        <input type="radio" name="gender" id="male" value="male" >
+        <label for="female">female</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="other">other</label>
+        <iut type="radio" name="gender" id="other" value="other"><br> -->
+          <div class="col-sm-10">
+          <label for="gender">Gender</label>
+          {{form.gender}}
+         <div style="visibility: hidden;"> {{form.course}}</div>
+  </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">dob:</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="name" name="dob" required>
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Phone:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="email" name="phone" placeholder="" required>
+    </div> 
+  </div>
+  <div class="row mb-3">
+     <label for="subject" class="col-sm-2 col-form-label">Country:</label>
+    <div class="col-sm-10" style="width: 200px;"> 
+      <!-- <input type="text" class="form-control" id="subject" name="country" required>  -->
+       
+     {{ form.country }}<br>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="message" class="col-sm-2 col-form-label">State:</label>
+    <div class="col-sm-10">
+      <!-- <input type="text" class="form-control" id="message" name="state"> -->
+       {{ form.state }}<br>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">City:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="city" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+   <!-- <select name="hobbies" multiple>Hobbies:
+            <option value="games">play games</option>
+            <option value="reading" selected>Reading Books</option>
+            <option value="climbing">climbing mountains</option>
+            <option value="riding">riding</option><br><br>
+            <option>{{StudentRegistrationForm.choices}}</option>
+        </select> -->
+       <div class="col-sm-10">
+        <label for="hobbies">Hobbies:</label>
+        {{form.hobbies}}
+     </div>   
+  </div>
+  <div class="row mb-3">
+  <label for="avatar">Your Avatar:</label>
+  <div class="col-sm-10">
+    <!-- <input type="file" name="avatar" id="avatar"> -->
+     <input type="file" name="avatar" id="avatar">
+      <!-- {{form.avatar}} -->
+    </div>
+    </div>
+      <div class="row mb-3">
+  <label for="attachment">Email verified:</label>
+  <div class="col-sm-10">
+      {{form.is_email_verified}}
+
+    </div>
+    </div>
+  <!-- <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
+      </div>
+    </div>
+  </div> -->
+
+   <div style="place-items: center;">
+  <div style="padding-bottom: 50px;">
+  <button type="submit" class="">Send</button>
+  </div>
+  </div>
+
+</form>
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+</div>
+</div> 
+<!-- --registration form end-- -->
+</div>
+
+<!-- Modal -->
+ <div id="hide">
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header text-white" style= "background:linear-gradient(45deg, var(--hover-color-3));">
+        <h5 class="modal-title" id="messageModalLabel">Notice</h5>
+        <button type="button" id="close" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% for message in messages %}
+          <p class="mb-0 text-primary">{{ message }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% if messages %}
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+        var msgModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        msgModal.show();
+    });
+</script>
+{% endif %}
+
+{% endblock %}

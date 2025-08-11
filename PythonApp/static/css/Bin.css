@@ -1,0 +1,37 @@
+
+.contact{
+    min-width: 600px;
+    background-color: var(--body-color);
+    height: ;
+    place-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px lightgrey;
+
+} 
+
+.contact form{
+    place-items: center;
+}
+
+.contact input{
+    
+}
+
+.contact label{
+    padding-right:50px;
+    gap:15px;
+    padding-left: 0px;
+    /* margin: 50px; */
+}
+
+.col-sm-10{
+    /* padding-left:25px;  */
+}
+
+.contact button{
+
+}
+
+.modal-header{
+    background-color: var(--container-color);
+}

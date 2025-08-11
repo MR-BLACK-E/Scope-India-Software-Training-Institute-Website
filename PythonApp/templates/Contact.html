@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<head>
+      <link href="{% static 'css/Contact.css' %}" rel="stylesheet">
+</head>
+
+<div class="mainbackground-contact">
+<div class="contactMain text-center" style="padding-bottom: 50px;">
+
+  <div class="h2"><h2>SCOPE INDIA Locations & Contact Details</h2></div>
+  <h4>Center for Software, Networking, & Cloud Education</h4>
+  <p>One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p>
+<!-- --contact cards start-- -->
+ <!-- <div class="row row-cols-1 row-cols-md-2 g-4">
+   <div class="col contactcards" >
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{% static 'img/cat-1.jpg' %}" alt="">
+                        <a class="cat-overlay  text-decoration-none" href="">
+                            <h4 class=" ">Web Design</h4>
+                            <span>100 Courses</span>
+                        </a>
+                    </div>
+                </div>
+   <div class="col contactcards">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{% static 'img/cat-1.jpg' %}" alt="">
+                        <a class="cat-overlay  text-decoration-none" href="">
+                            <h4 class="">Web Design</h4>
+                            <span>100 Courses</span>
+                        </a>
+                    </div>
+                </div>
+   <div class="col contactcards">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{% static 'img/cat-1.jpg' %}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="">
+                            <h4 class="text-white font-weight-medium">Web Design</h4>
+                            <span>100 Courses</span>
+                        </a>
+                    </div>
+                </div>
+   <div class="col contactcards">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{% static 'img/cat-1.jpg' %}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="">
+                            <h4 class="text-white font-weight-medium">Web Design</h4>
+                            <span>100 Courses</span>
+                        </a>
+                    </div>
+                </div>
+</div>  -->
+<!-- --contact cards end-- -->
+
+<!-- cards start -->
+
+  <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-4 " style="padding-right:60px ;">
+                    <div id="tvm" class="cards" >
+    <div class="card-details">
+      <h3 class="text_title">SCOPE INDIA</h3>
+      <h4>Trivandrum, Kerala</h4>
+    </div>
+    <button class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button>
+  </div>
+                </div>
+                <div class="col-lg-4">
+                     <div class="cards">
+    <div class="card-details">
+      <h3 class="text_title">SCOPE INDIA</h3>
+      <h4>Technopark, Kerala</h4>
+    </div>
+    <button class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">More Info</button>
+  </div>
+                </div>
+                <div class="col-lg-4">
+                     <div class="cards">
+    <div class="card-details">
+      <h3 class="text_title">SCOPE INDIA</h3>
+      <h4>Kochi, Kerala</h4>
+    </div>
+    <button class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-3">More Info</button>
+  </div>
+                </div>
+                <div class="col-lg-4">
+                     <div class="cards">
+    <div class="card-details">
+      <h3 class="text_title">SCOPE INDIA</h3>
+      <h4>Nagercoil 1, Tamil Nadu</h4>
+    </div>
+    <button class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-4">More Info</button>
+  </div>
+                </div>
+                <div class="col-lg-4">
+                     <div class="cards">
+    <div class="card-details">
+      <h3 class="text_title">SCOPE INDIA</h3>
+      <h4>Nagercoil 2, Tamil Nadu</h4>
+    </div>
+    <button class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-5">More Info</button>
+  </div>
+                </div>
+                <div class="col-lg-4">
+                     <div class="cards">
+    <div class="card-details">
+      <h3 class="text_title">SCOPE INDIA</h3>
+    </div>
+    <button class="card_button " data-bs-toggle="modal" data-bs-target="#home"><a class="nav-link" aria-current="page" href="{% url 'home' %}">Back to Home</a></button>
+  </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ <!-- cards end -->
+
+    
+<!-- --contact form start-- -->
+<div style="place-items: center;" class="">
+<div class="contact mt-5">
+    <h3 class=" mb-5" style="padding-top: 30px;">Contact Form</h3>
+<form id="form" name="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+  <div class="row mb-3">
+
+    <label for="name" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="to" name="from" placeholder="" required>
+    </div>
+  </div>
+  <!-- <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="to" placeholder="To" required>
+    </div>
+  </div> -->
+  <div class="row mb-3">
+    <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="subject" name="subject" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="message" class="col-sm-2 col-form-label">Message:</label>
+    <div class="col-sm-10">
+      <textarea type="text" class="form-control" id="message" name="message"></textarea >
+    </div>
+  </div>
+  <!-- <div class="row mb-3">
+  <label for="attachment">Your Avatar:</label>
+  <div class="col-sm-10">
+    <input type="file" name="attachment" id="attachment">
+    </div>
+    </div> -->
+  
+  <!-- <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <div style="place-items: center;">
+  <div style="padding-bottom: 50px;">
+  <button type="submit" class="">Send</button>
+  </div>
+  </div>
+
+</form>
+</div>
+</div>
+<!-- --contact form end-- -->
+
+
+<!-- 
+<h2>Contact Us</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send Email</button>
+</form>
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %} -->
+
+<!-- Modal -->
+ <div id="hide">
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header text-white" style= "background:linear-gradient(45deg, var(--hover-color-3));">
+        <h5 class="modal-title" id="messageModalLabel">Notice</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        {% for message in messages %}
+          <p class="mb-0 text-primary">{{ message }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% if messages %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var msgModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        msgModal.show();
+    });
+</script>
+{% endif %}
+
+{% if messages %}
+ <script>
+            $(document).ready(function()
+            {
+                $("#close").click(function(){
+                    $("#hide").hide();
+                });
+
+            }
+        );
+        </script>
+{% endif %}
+
+
+</div>
+</div>
+
+
+
+<!-- Modal- contact card-1 -->
+<div  class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content contactModal" >
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel">SCOPE INDIA</h2>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body contactModal">
+            <h4>Trivandrum, Kerala</h4>
+            <p>TC 25/1403/3, Athens Plaza, SS Kovil Road, Thampanoor, Trivandrum, Kerala 695001</p>
+         <div class="card bg-dark" style="width: 100%; background-color: #008bf8;">
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item"><i class="bi bi-telephone-forward"></i>&nbsp;<a href="tel:+919745936073">9745936073</a></li>
+             <li class="list-group-item"><a href="">info@scopeindia.org</a></li>
+             <li class="list-group-item"><i class="bi bi-geo-alt-fill primary"></i>&nbsp;<a href="https://maps.app.goo.gl/u2qWAZqhWJtoUwpZ8">Location Route Map</a></li>
+          </ul>
+         
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal- contact card-1  -->
+
+<!-- Modal- contact card-2 -->
+<div  class="modal fade " id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel-2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content contactModal" >
+      
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel-2">SCOPE INDIA</h2>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body contactModal">
+        <h4>Technopark, Kerala</h4>
+      <p>Phase 1, Main Gate, Diamond Arcade, Near Technopark, Trivandrum</p>
+         <div class="card bg-dark" style="width: 100%;">
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item"><i class="bi bi-telephone-forward"></i>&nbsp;<a href="tel:+919745936073">9745936073</a></li>
+             <li class="list-group-item"><a href="">technopark@scopeindia.org</a></li>
+             <li class="list-group-item"><i class="bi bi-geo-alt-fill primary"></i>&nbsp;<a href="https://maps.app.goo.gl/6wyX438pYnc362hu5">Location Route Map</a></li>
+          </ul>
+         
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal- contact card-2  -->
+
+<!-- Modal- contact card-3 -->
+<div  class="modal fade " id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel-3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content contactModal" >
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel-3">SCOPE INDIA</h2>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body contactModal">
+        <h4>Kochi, Kerala</h4>
+        <p>Vasanth Nagar Rd, near JLN Metro Station, Kaloor, Kochi, Kerala 682025</p>
+         <div class="card bg-dark" style="width: 100%;">
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item"><i class="bi bi-telephone-forward"></i>&nbsp;<a href="tel:+917592939481">7592939481</a></li>
+             <li class="list-group-item"><a href="">kochi@scopeindia.org</a></li>
+             <li class="list-group-item"><i class="bi bi-geo-alt-fill primary"></i>&nbsp;<a href="https://maps.app.goo.gl/PiTsikiPuE5uHiu78">Location Route Map</a></li>
+          </ul>
+          
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal- contact card-3  -->
+
+<!-- Modal- contact card-4 -->
+<div  class="modal fade " id="exampleModal-4" tabindex="-1" aria-labelledby="exampleModalLabel-4" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content contactModal" >
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel-4">SCOPE INDIA</h2>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body contactModal">
+        <h4> Nagercoil 1, Tamil Nadu</h4>
+        <p>Near WCC College, Palace Rd, Nagercoil, Tamil Nadu 629001</p>
+         <div class="card bg-dark" style="width: 100%;">
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item"><i class="bi bi-telephone-forward"></i>&nbsp;<a href="tel:+918075536185">8075536185</a></li>
+             <li class="list-group-item"><a href="ngl@scopeindia.org">ngl@scopeindia.org</a></li>
+             <li class="list-group-item"><i class="bi bi-geo-alt-fill primary"></i>&nbsp;<a href="https://maps.app.goo.gl/8Z9y4LW9bX89b8KVA">Location Route Map</a></li>
+          </ul>
+          
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal- contact card-4  -->
+
+<!-- Modal- contact card-5 -->
+<div  class="modal fade " id="exampleModal-5" tabindex="-1" aria-labelledby="exampleModalLabel-5" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content contactModal" >
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel-5">SCOPE INDIA</h2>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body contactModal">
+        <h4>Nagercoil 2, Tamil Nadu</h4>
+        <p>Pharma Street, 5/2 Ward 28, Distillery Road, Putheri Nagercoil</p>
+         <div class="card bg-dark" style="width: 100%;">
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item"><i class="bi bi-telephone-forward"></i>&nbsp;<a href="tel:+918075536185">8075536185</a></li>
+             <li class="list-group-item"><a href="">ngl@scopeindia.org</a></li>
+             <li class="list-group-item"><i class="bi bi-geo-alt-fill primary"></i>&nbsp;<a href="https://maps.app.goo.gl/5xDHWbmMkNhSy8ww9">Location Route Map</a></li>
+          </ul>
+          
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal- contact card-5  -->
+
+
+{% endblock %}

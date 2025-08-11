@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<body>
+    <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <!-- your existing form fields -->
+
+  <label for="id_selected_course">Select Course:</label>
+  
+   {{ form.course }}
+  <button type="submit">Register</button>
+</form>
+</body>
+
+
+<!-- Modal -->
+ <div id="hide">
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header text-white" style= "background:linear-gradient(45deg, var(--hover-color-3));">
+        <h5 class="modal-title" id="messageModalLabel">Notice</h5>
+        <button type="button" id="close" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% for message in messages %}
+          <p class="mb-0 text-primary">{{ message }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% if messages %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var msgModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        msgModal.show();
+    });
+</script>
+{% endif %}
+
+{% endblock %}
+</html>

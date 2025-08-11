@@ -1,0 +1,419 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+      <link href="{% static 'css/Login_home.css' %}" rel="stylesheet">
+<style>
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  a:hover{
+    color: white;
+  }
+</style>
+
+</head>
+
+ <div class="mainbackground-home" style="place-items:;">
+
+ <!-- --Profile view-- -->
+  <div class="profile">
+    <div class="view" style="place-items: center;"> 
+
+     <h2>Welcome {{student.first_name}}&nbsp;{{student.last_name}}</h2>
+     <!-- <p>Your Email:{{username}}</p> -->
+   <p>You are logged in.</p>
+   
+ </div>
+ <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 " style="padding-right:60px ;">
+                      <h3>Details</h3>
+    <div class="profile-grid">
+ 
+    <p>Name:</p><p>{{student.first_name}}&nbsp;{{student.last_name}}</p>
+    <p>Email:</p><p>{{student.email}}</p>
+    <p>Gender:</p><p>{{student.gender}}</p>
+    <p>DOB:</p><p>{{student.dob}}</p>
+    <p>Phone:</p><p>{{student.phone}}</p>
+    <p>Country:</p><p>{{student.country}}</p>
+    <p>State:</p><p>{{student.state}}</p>
+    <p>City:</p><p>{{student.city}}</p>
+    <p>Hobbies:</p><p>{{student.hobbies}}</p>
+    <!-- <p>course:</p><p>{{student.course}}</p> -->
+
+    </div>
+                </div>
+                <div class="col-lg-5 avatar" style="">
+                   {% if student.avatar %}
+                    <img src="{{ student.avatar.url }}" alt="Profile Image" width="100">
+                     {% else %}
+                  <img class="shadow img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/scopeimage-1.jpg' %}" alt="">
+                   {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- <h3>Details</h3>
+    <div class="profile-grid">
+
+    <p>Name:</p><p>{{student.first_name}}&nbsp;{{student.last_name}}</p>
+    <p>Email:</p><p>{{student.email}}</p>
+    <p>Gender:</p><p>{{student.gender}}</p>
+    <p>Date Of Birth:</p><p>{{student.dob}}</p>
+    <p>Phone:</p><p>{{student.phone}}</p>
+    <p>Country:</p><p>{{student.country}}</p>
+    <p>State:</p><p>{{student.state}}</p>
+    <p>City:</p><p>{{student.city}}</p>
+    <p>Hobbies:</p><p>{{student.hobbies}}</p>
+    </div>
+      <div><img src="{{ student.avatar.url }}" alt="Profile Image" width="100"></div>
+     {% if student.avatar %}
+     <img src="{{ student.avatar.url }}" alt="Profile Image" width="100">
+    {% else %}
+    <p>No profile image uploaded.</p>
+    {% endif %} -->
+  </div>
+  <!-- Profile view End -->
+   
+   <!-- courses start -->
+ <div style="padding-bottom: 50px;">
+<div class="contactMain text-center" style="padding-bottom: 50px;">
+
+    <div class="h2"><h2>Courses at SCOPE INDIA</h2></div>
+  <h4>Center for Software, Networking, & Cloud Education</h4>
+  <p>One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p>
+</div>
+   <div class="contactMain text-center" style="padding-bottom: 50px;">
+    <div class="h2"><h2>Data Science, AI, & Data Analytics Courses</h2></div>
+   </div>
+   <div class="placement">
+    <div class="container text-center">
+     <div class="row">
+        <div class="col">         
+             <div class="cards">
+    <div class="card-details">
+      <h4>Data Science & AI Course</h4>
+    </div>
+    <button id="open" class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">Details</button>
+  </div>
+        </div>
+        <div class="col">
+            <div class="cards">
+    <div class="card-details">
+      <h4>Data Analytics Course</h4>
+    </div>
+    <button id="open2" class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">Details</button>
+  </div>
+        </div>
+        <div class="col">
+            <div class="cards">
+    <div class="card-details">
+      <h4>Microsoft Power BI Course</h4>
+    </div>
+    <button id="open3" class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">Details</button>
+  </div>
+        </div>
+     </div>
+    </div>
+
+    <div id="show" class="details">
+      <h5>Course Duration : 6 Month + 3 Month OJT</h5>
+      <h5>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h5>
+      <p>This comprehensive program equips you with the skills to excel in data-driven fields, mastering tools like Python 3.12, MySQL, and Django. Dive deep into data processing with Pandas, NumPy, and advanced data visualization using Matplotlib, Seaborn, and Tableau. You'll also gain expertise in machine learning covering supervised, unsupervised, and reinforcement learning along with deep learning and AI to stay ahead in this fast-evolving domain.
+
+        Master the fundamentals of REST services, GIT version control, and web hosting techniques. Real-world exposure comes through live projects with Suffix E Solutions, helping you apply what you've learned. The program also emphasizes logical reasoning and includes interview preparation and on-the-job training, ensuring you're ready to hit the ground running in any data science role.
+
+        By the end of the course, you will have developed a strong foundation in both technical and practical aspects of data science, making you a valuable asset in any organization.</p>
+      <button id="close"><a href="#open" >close</a></button>
+    </div>
+
+    <div id="show2" class="details">
+      <h5>Course Duration : 4 Month + 3 Month OJT</h5>
+      <h5>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h5>
+      <p>Begin your journey into the world of data with our Data Analytics Course & Internship! This program is designed to equip you with essential data analysis skills using tools like Python 3.12, MySQL, and popular libraries such as Pandas, NumPy, and Matplotlib. You'll learn how to process, analyze, and visualize data, converting complex information into actionable insights effortlessly.
+
+        Gain valuable real-world experience through live projects in partnership with Suffix E Solutions, where you'll apply your skills in real business scenarios and sharpen your expertise. The course also includes interview preparation, on-the-job training, and tailored placement support, ensuring you're fully prepared to secure a role in the data analytics field
+
+        By completing this program, you'll develop the ability to extract insights, make data-driven decisions, and present your findings effectively, skills highly sought after across industries. With a blend of technical training and practical experience, this course empowers you to confidently advance in your career in data analytics.</p>
+      <button id="close2"><a href="#open" >close</a></button>
+    </div>
+
+    <div id="show3" class="details">
+      <h5>Course Duration : 3 Month + 3 Month OJT</h5>
+      <h5>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h5>
+      <p>This all-inclusive program is designed to provide learners with essential skills in data analysis, Microsoft Excel, SQL, and Power BI. Participants will also explore Power Query for seamless data transformation and gain hands-on experience through live projects with Suffix E Solutions, applying their knowledge to practical business scenarios.
+
+        Designed with career success in mind, the course offers interview preparation, on-the-job training, and personalized placement support, ensuring a smooth transition into roles in data analytics and reporting. Through learning Power BI, participants will acquire the ability to create impactful dashboards, extract actionable insights, and enable data-driven decision-making in professional environments.
+
+        Perfect for those eager to enhance their analytical skills and advance their careers in data visualization, this program equips learners with the tools and knowledge necessary to become Power BI specialists. Take the first step toward achieving your goals!</p>
+      <button id="close3"><a href="#open2" >close</a></button>
+    </div>
+   </div> 
+
+   <div class="contactMain text-center" style="padding-bottom: 50px; padding-top: 50px;">
+    <div class="h2"><h2>Software Courses</h2></div>
+   </div>
+   <div class="placement">
+    <div class="container text-center">
+     <div class="row">
+        <div class="col">
+<div class="cards">
+    <div class="card-details">
+      <h4>Python Full Stack Course</h4>
+    </div>
+    <button id="open4" class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">Details</button>
+  </div>
+        </div>
+        <div class="col">
+            <div class="cards">
+    <div class="card-details">
+      <h4>Java Full Stack Course</h4>
+    </div>
+    <button id="open5" class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">Details</button>
+  </div>
+        </div>
+        <div class="col">
+<div class="cards">
+    <div class="card-details">
+      <h4>PHP Full Stack Course</h4>
+    </div>
+    <button id="open6" class="card_button " data-bs-toggle="modal" data-bs-target="#exampleModal-2">Details</button>
+  </div>
+        </div>
+     </div>
+    </div>
+
+    <div id="show4" class="details">
+      <h5>Course Duration : 5 Month + 3 Month OJT</h5>
+      <h5>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h5>
+      <p>The Python Full Stack Course & Internship equips students with extensive skills for end-to-end web development. The course covers front-end technologies like HTML 6 , CSS 4, JavaScript ES 7, and Bootstrap 5 to create dynamic user interfaces, and back-end development with Django to build robust server-side applications. Students also explore database management using SQL and NoSQL tools like MySQL and MongoDB, API integration for seamless data exchange, and deployment. Through real-world projects in the internship, participants gain practical experience and a strong portfolio to boost career prospects. Python's versatility ensures opportunities in web development, AI, and data science, with roles such as Python Full Stack Developer, Web Developer, and Machine Learning Engineer. Freshers in India can expect salaries ranging from ₹3,50,000 to ₹8,00,000 per annum, with experienced professionals earning over ₹20,00,000. The course emphasizes project-based learning, boosting industry-relevant skills and flexibility, with Python's popularity ensuring high demand and competitive salaries across multiple fields.</p>
+      <button id="close4"><a href="#open2" >close</a></button>
+    </div>
+
+    <div id="show5" class="details">
+      <h5>Course Duration : 5 Month + 3 Month OJT</h5>
+      <h5>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h5>
+      <p>Our Java Full Stack Course & Internship Program is designed to elevate your career by offering comprehensive training in both front-end and back-end development. The curriculum includes key areas such as Java programming, advanced frameworks like Spring Boot and Hibernate, object-oriented programming, database management, API integration, cloud deployment, and front-end technologies like HTML, CSS, and JavaScript. By the end of the program, participants will possess the expertise required to manage the entire web application development lifecycle. The internship component enhances the learning experience by providing hands-on exposure to real-world projects, guided by industry professionals, ensuring participants are well-prepared to face workplace challenges with confidence.
+
+        This program opens up diverse career opportunities, including roles such as Java Developer, Full Stack Developer, Software Engineer, Technical Architect, and Web Developer. Full-stack developers remain highly sought after and benefit from excellent career advancement prospects. Entry-level professionals in India can expect salaries between ₹4-₹7 LPA, while experienced developers may earn ₹12-₹20 LPA or more. Globally, salaries for full-stack developers range from $70,000 to $120,000 annually, with even higher earning potential in leading IT hubs like the US, UK, and Australia. Alongside acquiring a versatile skill set, participants will build a robust portfolio, giving them a competitive advantage in the evolving job market.</p>
+      <button id="close5"><a href="#open2" >close</a></button>
+    </div>
+
+    <div id="show6" class="details">
+      <h5>Course Duration : 5 Month + 3 Month OJT</h5>
+      <h5>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h5>
+      <p>Our PHP Full Stack Development Internship Program is tailored to help aspiring developers, students, and recent graduates build successful careers in web development. This program covers front-end and back-end technologies, with PHP as the core language. Participants will master HTML6, CSS4, JavaScript, and frameworks like React.js , as well as PHP fundamentals, object-oriented programming (OOP), frameworks like Laravel and CodeIgniter, and RESTful APIs for robust server-side applications. The program also prioritizes database management with tools like MySQL and MongoDB, along with version control tools like Git and GitHub to streamline collaboration. Live projects guided by expert mentors ensure hands-on experience, creating a professional portfolio that stands out to employers.
+
+        Graduates gain career readiness through resources like resume support, interview preparation, and certification, positioning them for roles such as PHP Full Stack Developer, Web Developer, or Application Developer. This internship combines technical expertise with industry insights and networking opportunities, enabling participants to thrive in the evolving digital sector. Whether you're new to web development or looking to enhance your skills, this program equips you with the practical knowledge and confidence needed to achieve your career aspirations.</p>
+      <button id="close6"><a href="#open2" >close</a></button>
+    </div>
+   </div>
+   <div style="margin: 40px;">
+<form id="form" name="form" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <!-- {{ form.as_p }} -->
+
+  <!-- form fields -->
+<!-- 
+  <label for="id_selected_course">Select Course:</label>
+  
+  {{ form.course }} -->
+
+  <!-- <button type="submit">Register</button> -->
+   <div class="row mb-3">
+      <label for="id_selected_course">Select Course:</label>
+  <div class="col-sm-10">
+  {{ form.course }}
+     <h6 style="color: aliceblue; padding-top: 20px;">Edit in Your profile also!</h6>
+    </div>
+    </div>
+</form>
+
+  </div>
+  </div>
+
+    <!-- courses end -->
+
+
+  <!-- profile edit start   -->
+
+         <div class="h2"><h2>Edit Your Profile</h2></div>
+
+   <!-- --Registration form start-- -->
+ <div style="place-items: center;">
+<div class=" contact mb-5 mt-5">
+    <h3 class=" mb-5" style="padding-top: 30px;"> Edit Profile</h3>
+<form id="form" name="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">First Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="first_name" value="{{ student.first_name }}" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">Last Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="last_name" value="{{ student.last_name }}" required>
+    </div>
+  </div>
+  <!-- <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="to" name="email" value="{{ student.email }}" placeholder="" required>
+    </div>
+  </div> -->
+  <!-- <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password" name="password" value="{{ student.password }}" required>
+    </div>
+  </div> -->
+  <div class="row mb-3">
+    <!-- np<label for="male">male</label>
+        <input type="radio" name="gender" id="male" value="male" >
+        <label for="female">female</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="other">other</label>
+        <iut type="radio" name="gender" id="other" value="other"><br> -->
+          <div class="col-sm-10">
+          <label for="gender">Gender</label>
+          {{form.gender}}
+  </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">dob:</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="name" name="dob" value="{{ student.dob }}" required>
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Phone:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="email" name="phone" value="{{ student.phone }}" placeholder="" required>
+    </div> 
+  </div>
+  <div class="row mb-3">
+     <label for="subject" class="col-sm-2 col-form-label">Country:</label>
+    <div class="col-sm-10" style="width: 200px;"> 
+      <!-- <input type="text" class="form-control" id="subject" name="country" required>  -->
+       
+     {{ form.country }}<br>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="message" class="col-sm-2 col-form-label">State:</label>
+    <div class="col-sm-10">
+      <!-- <input type="text" class="form-control" id="message" name="state"> -->
+       {{ form.state }}<br>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">City:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="city" value="{{ student.city }}" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+   <!-- <select name="hobbies" multiple>Hobbies:
+            <option value="games">play games</option>
+            <option value="reading" selected>Reading Books</option>
+            <option value="climbing">climbing mountains</option>
+            <option value="riding">riding</option><br><br>
+            <option>{{StudentRegistrationForm.choices}}</option>
+        </select> -->
+       <div class="col-sm-10">
+        <label for="hobbies">Hobbies:</label>
+        {{form.hobbies}}
+     </div>   
+  </div>
+  <div class="row mb-3">
+  <label for="avatar">Your Avatar:</label>
+  <div class="col-sm-10">
+    <input type="file" name="avatar" value="{{ student.avatar }}" id="avatar">
+     <!-- {{student.avatar}} -->
+    </div>
+    </div>
+      <div class="row mb-3">
+  <label for="attachment">Email verified:</label>
+  <div class="col-sm-10">
+      {{student.is_email_verified}}  
+    </div>
+    </div>
+    <div class="row mb-3">
+      <label for="id_selected_course">Select Course:</label>
+  <div class="col-sm-10">
+  {{ form.course }}
+    </div>
+    </div>
+
+  <!-- <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
+      </div>
+    </div>
+  </div> -->
+
+   <div style="place-items: center;">
+  <div style="padding-bottom: 50px;">
+  <button type="submit" class="">Send</button>
+  </div>
+  </div>
+
+</form>
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+</div>
+</div> 
+<!-- --registration form end-- -->
+      <button ><a href="{% url 'Password_change' %}">Change Password</a> </button>
+   <!-- profile edit end -->
+      <button id=""><a href="{% url 'custom_logout' %}">Logout</a></button>
+
+</div> 
+
+<!-- Modal -->
+ <div id="hide">
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header text-white" style= "background:linear-gradient(45deg, var(--hover-color-3));">
+        <h5 class="modal-title" id="messageModalLabel">Notice</h5>
+        <button type="button" id="close" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% for message in messages %}
+          <p class="mb-0 text-primary">{{ message }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% if messages %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var msgModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        msgModal.show();
+    });
+</script>
+{% endif %}
+
+{% endblock %}
